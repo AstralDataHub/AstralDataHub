@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .starsubmit-button {
+            background-color: #4434b4;
+            border: none;
+            color: #b13974;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 12px;
+            transition: background-color 0.3s ease;
+            }
+        .starsubmit-button {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    Name:
+    <br><input type="text" id="starname">
+    <br>Mass(M☉):
+    <br><input type="text" id="starradius">
+    <br>Radius(R☉):
+    <br><input type="text" id="startype">
+    <br>Age:
+    <br><input type="text" id="starage">
+    <br>Temperature(K):
+    <br><input type="text" id="startemperature">
+    <br>Luminosity(L☉):
+    <br><input type="text" id="starluminosity">
+    <br><button onclick="getInput()" class="starsubmit-button">Submit</button>
+    <br>
+    <p id="text"></p>
+
+</body>
+</html>
