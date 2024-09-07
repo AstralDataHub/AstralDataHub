@@ -4,12 +4,21 @@
 <link href="main.html">
 <style>
 
-    h1 {margin: 0; text-align: center; margin-top: 250px; color: yellow;}
+    .text {
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: purple;
+            font-size: 50px;
+            font-weight: bold;
+            text-align: center;
+        }
     body {
 
-            background-image: url('background.jpg'), url('background2.jpg');
+            background-image: url('background1.jpg');
             background-size: cover; 
-            background-position: center 0.5 px; 
+            background-position: center 1px;
             background-repeat: repeat;
             background-blend-mode: multiply;
         }
@@ -17,7 +26,7 @@
             background-color: #4434b4; 
             border: none; 
             color: #080404; 
-            padding: 5px 32px; /* small amount of padding */
+            padding: 15px 52px; /* small amount of padding */
             text-align: center; 
             text-decoration: none; 
             display: inline-block; 
@@ -31,27 +40,30 @@
             background-color: #242054; /* when hovering change color */
         }
     .test {
-        height: 400px;
         margin: 0;
         padding: 0;
+        padding-top: 30%;
         display: flex;
         justify-content: center;
         align-items: center;
     }
-    img {
-        margin: 0;
-        padding: 0;
-        background-position: center;
+
+
+    .container {
+        position: absolute;
+        top: 5%;
+        left: 22.5%;
     }
 </style>
 </head>
 <body>
-    <h1>AstralDataCollection</h1>
+    <div class = "container">
+        <img src="logo.png" style = "padding: 0; width: 130%; length: 130%">
+    </div>
+    <div class="text">Astral Data Table</div>
     <div class = "test">
         <a href="datatable=stars.html" class="start-button">Start</a>
     </div>
-    <img src="logo.png">
-    
 </body>
 
 </html>
