@@ -27,9 +27,9 @@
     Name:
     <br><input type="text" id="starname">
     <br>Mass(M☉):
-    <br><input type="text" id="starradius">
+    <br><input type="text" id="starmass">
     <br>Radius(R☉):
-    <br><input type="text" id="startype">
+    <br><input type="text" id="starradius">
     <br>Age:
     <br><input type="text" id="starage">
     <br>Temperature(K):
@@ -38,7 +38,26 @@
     <br><input type="text" id="starluminosity">
     <br><button onclick="getInput()" class="starsubmit-button">Submit</button>
     <br>
-    <p id="text"></p>
+    <p id="demo"></p>
+    <!--<script>
+         getInput() {
+            var starname = document.getElementById("starname").value;
+            var starradius = document.getElementById("starradius").value;
+            var startype = document.getElementById("startype").value;
+            var starage = document.getElementById("starage").value;
+            var startemperature = document.getElementById("startemperature").value;
+            var starluminosity = document.getElementById("starluminosity").value;
+            document.getElementById("text").innerHTML = starname;
 
+
+        }
+    </script>
+    -->
+    <script>
+        function getInput() {
+            var x = document.getElementById("starname").value;
+            document.getElementById("demo").innerHTML = x;
+        }
+    </script>
 </body>
 </html>

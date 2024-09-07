@@ -14,28 +14,30 @@
   <table id = "startable" style = "width:100%">
     <tr>
       <th>Name</th>
-      <th>Mass(M☉)</th>
-      <th>Radius(R☉)</th>
+      <th>Mass (M☉)</th>
+      <th>Radius (R☉)</th>
       <th>Age</th>
-      <th>Temperature(K)</th>
-      <th>Luminosity(L☉)</th>
+      <th>Temperature (K)</th>
+      <th>Luminosity (L☉)</th>
     </tr>
     <tbody id = "startablebody">
       <tr>
         <td>Sirius</td>
         <td>2.063 +- 0.023</td>
-        <td>1.713 += 0.009</td>
+        <td>1.713 +- 0.009</td>
         <td>242 +- 5 myr</td>
         <td>25000 +- 200</td>
         <td>0.056</td>
       </tr>
     </tbody>
   </table>
+  <p id = "demo">hi</p>
   <script>
+  function updatestartable() {
     var data = [
-      { name: starname, age: 30, email: "john@example.com" }
+      { name: starname, mass: starmass, radius: starradius }
     ];
-
+    document.getElementById("starstuff").innerHTML = starname;
     var startablebody = document.getElementById("startablebody");
 
     data.forEach(function(item) {
@@ -45,25 +47,45 @@
       nameCell.textContent = item.name;
       row.appendChild(nameCell);
 
-      var ageCell = document.createElement("td");
-      ageCell.textContent = item.age;
-      row.appendChild(ageCell);
+      var massCell = document.createElement("td");
+      massCell.textContent = item.mass;
+      row.appendChild(massCell);
 
-      var emailCell = document.createElement("td");
-      emailCell.textContent = item.email;
-      row.appendChild(emailCell);
+      var radiusCell = document.createElement("td");
+      radiusCell.textContent = item.radius;
+      row.appendChild(radiusCell);
 
       tableBody.appendChild(row);
     });
+  }
 
-        function getInput() {
-            var starname = document.getElementById("starname").value;
-            var starradius = document.getElementById("starradius").value;
-            var startype = document.getElementById("startype").value;
-            var starage = document.getElementById("starage").value;
-            var startemperature = document.getElementById("startemperature").value;
-            var starluminosity = document.getElementById("starluminosity").value;
-        }
+  </script>
+  Name:
+  <br><input type="text" id="starname">
+  <br>Mass(M☉):
+  <br><input type="text" id="starmass">
+  <br>Radius(R☉):
+  <br><input type="text" id="starradius">
+  <br>Age:
+  <br><input type="text" id="starage">
+  <br>Temperature(K):
+  <br><input type="text" id="startemperature">
+  <br>Luminosity(L☉):
+  <br><input type="text" id="starluminosity">
+  <br><button onclick="getInput()" class="starsubmit-button">Submit</button>
+  <br>
+  <p id="text"></p>
+  <script>
+    function getInput() {
+        var starname = document.getElementById("starname").value;
+        var starradius = document.getElementById("starradius").value;
+        var startype = document.getElementById("startype").value;
+        var starage = document.getElementById("starage").value;
+        var startemperature = document.getElementById("startemperature").value;
+        var starluminosity = document.getElementById("starluminosity").value;
+        document.getElementById("demo").innerHTML = starname;
+        updatestartable();
+    }
   </script>
 </body>
 </html>
