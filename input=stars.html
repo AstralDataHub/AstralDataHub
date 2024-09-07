@@ -22,43 +22,106 @@
             background-color: #45a049;
         }
     </style>
+    <style>
+        table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        }
+    </style>
 </head>
 <body>
+
+    <table id = "startable" style = "width:100%">
+        <tr>
+            <th>Name</th>
+            <th>Mass (M☉)</th>
+            <th>Radius (R☉)</th>
+            <th>Age</th>
+            <th>Temperature (K)</th>
+            <th>Luminosity (L☉)</th>
+        </tr>
+        <tbody id = "startablebody">
+        <tr>
+            <td>Sirius</td>
+            <td>2.063 +- 0.023</td>
+            <td>1.713 +- 0.009</td>
+            <td>242 +- 5 myr</td>
+            <td>25000 +- 200</td>
+            <td>0.056</td>
+        </tr>
+        </tbody>
+    </table>
+
     Name:
-    <br><input type="text" id="starname">
+    <br><input type="text" id="starname" value="q">
     <br>Mass(M☉):
-    <br><input type="text" id="starmass">
+    <br><input type="text" id="starmass" value="w">
     <br>Radius(R☉):
-    <br><input type="text" id="starradius">
+    <br><input type="text" id="starradius" value="e">
     <br>Age:
-    <br><input type="text" id="starage">
+    <br><input type="text" id="starage" value="r">
     <br>Temperature(K):
-    <br><input type="text" id="startemperature">
+    <br><input type="text" id="startemperature" value="t">
     <br>Luminosity(L☉):
-    <br><input type="text" id="starluminosity">
+    <br><input type="text" id="starluminosity" value="y">
     <br><button onclick="getInput()" class="starsubmit-button">Submit</button>
     <br>
-    <p id="demo"></p>
-    <!--<script>
-         getInput() {
-            var starname = document.getElementById("starname").value;
-            var starradius = document.getElementById("starradius").value;
-            var startype = document.getElementById("startype").value;
-            var starage = document.getElementById("starage").value;
-            var startemperature = document.getElementById("startemperature").value;
-            var starluminosity = document.getElementById("starluminosity").value;
-            document.getElementById("text").innerHTML = starname;
+    <p id="name"></p>
+    <p id="mass"></p>
+    <p id="radius"></p>
+    <p id="age"></p>
+    <p id="temperature"></p>
+    <p id="luminosity"></p>
 
-
-        }
-    </script>
-    -->
     <script>
         function getInput() {
-            var x = document.getElementById("starname").value;
-            document.getElementById("demo").innerHTML = x;
+            localStorage.setItem('star0', document.getElementByID("starname").value);
+            localStorage.setItem('star1', document.getElementByID("starmass").value);
+            localStorage.setItem('star2', document.getElementByID("starradius").value);
+            localStorage.setItem('star3', document.getElementByID("starage").value);
+            localStorage.setItem('star4', document.getElementByID("startemperature").value);
+            localStorage.setItem('star4', document.getElementByID("starluminosity").value);
+
         }
     </script>
+    <a href="datatable=stars.html">testgotooutputpage</a>
 
+
+
+
+    <!--<script>
+        function getInput() {
+            var star0 = document.getElementById("starname").value;
+            var star1 = document.getElementById("starmass").value;
+            var star2 = document.getElementById("starradius").value;
+            var star3 = document.getElementById("starage").value;
+            var star4 = document.getElementById("startemperature").value;
+            var star5 = document.getElementById("starluminosity").value;
+
+            var table = document.getElementById("startable");
+            var row = table.insertRow();
+
+            updatetable(star0, star1, star2, star3, star4, star5);
+
+
+        }
+
+        function updatetable(a, b, c, d, e, f) {
+            var cell0 = row.insertCell(0);
+            var cell1 = row.insertCell(1);
+            var cell2 = row.insertCell(2);
+            var cell3 = row.insertCell(3);
+            var cell4 = row.insertCell(4);
+            var cell5 = row.insertCell(5);
+            cell0.innerHTML = a;
+            cell1.innerHTML = b;
+            cell2.innerHTML = c;
+            cell3.innerHTML = d;
+            cell4.innerHTML = e;
+            cell5.innerHTML = f;
+        }
+    </script>-->
+
+    <p id="demo"></p>
 </body>
 </html>
