@@ -14,56 +14,42 @@
   <table id = "startable" style = "width:100%">
     <tr>
       <th>Name</th>
-      <th>Mass(M☉)</th>
-      <th>Radius(R☉)</th>
+      <th>Mass (M☉)</th>
+      <th>Radius (R☉)</th>
       <th>Age</th>
-      <th>Temperature(K)</th>
-      <th>Luminosity(L☉)</th>
+      <th>Temperature (K)</th>
+      <th>Luminosity (L☉)</th>
     </tr>
     <tbody id = "startablebody">
       <tr>
         <td>Sirius</td>
         <td>2.063 +- 0.023</td>
-        <td>1.713 += 0.009</td>
+        <td>1.713 +- 0.009</td>
         <td>242 +- 5 myr</td>
         <td>25000 +- 200</td>
         <td>0.056</td>
       </tr>
     </tbody>
   </table>
+
   <script>
-    var data = [
-      { name: starname, age: 30, email: "john@example.com" }
-    ];
+    function getOutput() {
+      var table = document.getElementById("startable");
+      var row = table.insertRow();
 
-    var startablebody = document.getElementById("startablebody");
-
-    data.forEach(function(item) {
-      var row = document.createElement("tr");
-
-      var nameCell = document.createElement("td");
-      nameCell.textContent = item.name;
-      row.appendChild(nameCell);
-
-      var ageCell = document.createElement("td");
-      ageCell.textContent = item.age;
-      row.appendChild(ageCell);
-
-      var emailCell = document.createElement("td");
-      emailCell.textContent = item.email;
-      row.appendChild(emailCell);
-
-      tableBody.appendChild(row);
-    });
-
-        function getInput() {
-            var starname = document.getElementById("starname").value;
-            var starradius = document.getElementById("starradius").value;
-            var startype = document.getElementById("startype").value;
-            var starage = document.getElementById("starage").value;
-            var startemperature = document.getElementById("startemperature").value;
-            var starluminosity = document.getElementById("starluminosity").value;
-        }
+      var cell0 = row.insertCell(0);
+      var cell1 = row.insertCell(1);
+      var cell2 = row.insertCell(2);
+      var cell3 = row.insertCell(3);
+      var cell4 = row.insertCell(4);
+      var cell5 = row.insertCell(5);
+      cell0.innerHTML = localStorage.getItem('star0');
+      cell1.innerHTML = localStorage.getItem('star1');
+      cell2.innerHTML = localStorage.getItem('star2');
+      cell3.innerHTML = localStorage.getItem('star3');
+      cell4.innerHTML = localStorage.getItem('star4');
+      cell5.innerHTML = localStorage.getItem('star5');
+    }
   </script>
 </body>
 </html>
