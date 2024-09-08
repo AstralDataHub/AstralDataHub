@@ -2,56 +2,62 @@
 <html lang = "en">
 <head>
 <link href="main.html">
+<link rel="stylesheet" type="text/css" href="font.css">
 <style>
 
-    h1 {margin: 0; text-align: center; margin-top: 250px; color: yellow;}
+
     body {
 
-            background-image: url('background.jpg'), url('background2.jpg');
+            background-image: url('background1.jpg');
             background-size: cover; 
-            background-position: center 0.5 px; 
+            background-position: center 1px;
             background-repeat: repeat;
             background-blend-mode: multiply;
         }
     .start-button {
+        
             background-color: #4434b4; 
             border: none; 
-            color: #080404; 
-            padding: 5px 32px; /* small amount of padding */
+            color: #080c2c; 
+            padding: 15px 52px; /* small amount of padding */
             text-align: center; 
             text-decoration: none; 
             display: inline-block; 
             font-size: 30px; 
             margin: 4px 2px; /* Margin */
             cursor: pointer; /* Pointer cursor on hover */
-            border-radius: 100px; /* Rounded corners */
+            border-radius: 0px; /* Rounded corners */
             transition: background-color 0.3s ease; /* Smooth transition */
         }
     .start-button:hover {
             background-color: #242054; /* when hovering change color */
         }
     .test {
-        height: 400px;
         margin: 0;
         padding: 0;
+        padding-top: 30%;
         display: flex;
         justify-content: center;
         align-items: center;
     }
-    img {
-        margin: 0;
-        padding: 0;
-        background-position: center;
+
+
+    .container {
+        position: absolute;
+        top: 35%;
+        left: 1%;
     }
 </style>
+
 </head>
 <body>
-    <h1>AstralDataCollection</h1>
+    <div class = "container">
+        <img src="logo.png" style = "padding: 0; width: 100%; length: 100%; ">
+    </div>
+
     <div class = "test">
         <a href="datatable=stars.html" class="start-button">Start</a>
     </div>
-    <img src="logo.png">
-    
 </body>
 
 </html>
