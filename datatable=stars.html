@@ -10,6 +10,38 @@
 
     #input {
     }
+    
+    .newdatabutton {
+          
+          background-color: #4434b4; 
+          border: none; 
+          color: #080c2c; 
+          padding: 10px 25px; /* small amount of padding */
+          text-align: center; 
+          text-decoration: none; 
+          display: inline-block; 
+          font-size: 20px; 
+          margin: 4px 2px; /* Margin */
+          cursor: pointer; /* Pointer cursor on hover */
+          border-radius: 0px; /* Rounded corners */
+          transition: background-color 0.3s ease; /* Smooth transition */
+      }
+      .newdatabutton:hover {
+          background-color: #242054; /* when hovering change color */
+      }
+      .newdatabuttonposition { /* as the name implies */
+          margin: 0;
+          padding-left: 0;
+          padding-top: 1%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+      }
+      .position {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
   </style>
   <title>Title</title>
 </head>
@@ -37,23 +69,30 @@
   </tbody>
 </table>
 
-<button onclick="showInput()" id="newDataButton">New Data</button>
-
-<div id="input" onload="hideInput()">
-  Name:
-  <br><input type="text" id="starname">
-  <br>Mass(M☉):
-  <br><input type="text" id="starmass">
-  <br>Radius(R☉):
-  <br><input type="text" id="starradius">
-  <br>Age:
-  <br><input type="text" id="starage">
-  <br>Temperature(K):
-  <br><input type="text" id="startemperature">
-  <br>Luminosity(L☉):
-  <br><input type="text" id="starluminosity">
-  <br><button onclick="getInput()" class="starsubmit-button">Submit</button>
-  <br>
+<div class = "position">
+  <button onclick="showInput()" id="newDataButton" class ="newdatabutton">New Data</button>
+</div>
+<div class = "position">
+  <div id="input" onload="hideInput()">
+    Name:
+    <br><input type="text" id="starname">
+    <br>Mass(M☉):
+    <br><input type="text" id="starmass">
+    <br>Radius(R☉):
+    <br><input type="text" id="starradius">
+    <br>Age:
+    <br><input type="text" id="starage">
+    <br>Temperature(K):
+    <br><input type="text" id="startemperature">
+    <br>Luminosity(L☉):
+    <br><input type="text" id="starluminosity">
+    <br>
+    <div class = "position">
+      <button onclick="getInput()" class="newdatabutton">Submit</button>
+    </div>
+    
+    <br>
+  </div>
 </div>
 
 
