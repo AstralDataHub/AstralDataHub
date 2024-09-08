@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <link rel="stylesheet" type="text/css" href="font.css">
+    <style>
+        body {
+
+            background-image: url('galaxy_about.png'); /* background */
+            background-size: cover; 
+            background-position: center 1px;
+            background-repeat: repeat;
+            background-blend-mode: multiply;
+
+        }
+        h1 {
+            position: absolute; /* CSS for the title and the paragraph */
+            padding-left: 30%;
+            padding-top: 5%;
+            color: white; 
+            text-decoration: underline;
+            font-size: 70px;
+            
+        }
+        ul {
+            color: white;
+            position: absolute;
+            padding-left: 27.5%;
+            padding-top: 15%;
+            font-size: 30px;
+        }
+        .back-button {
+        
+        background-color: #4434b4; 
+        border: none; 
+        color: #080c2c; 
+        padding: 15px 52px; /* padding... we love padding.... */
+        text-align: center; 
+        text-decoration: none; 
+        display: inline-block; 
+        font-size: 30px; 
+        margin: 4px 2px; 
+        cursor: pointer; /* Pointer cursor on hover so it actually works*/
+        transition: background-color 0.3s ease; /* Smooth transition (found off the internet)*/
+        }
+        .back-button:hover { /* when hovering change color */
+            background-color: #242054;
+        }
+        .buttonposition {
+            margin: 0;
+            padding: 0;
+            padding-top: 38%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+
+    </head>
+    <body>
+        <h1>
+            OUR PURPOSE:
+        </h1>
+        <ul>
+            <li>To create an efficient and organized way <br> to store information </li>
+            <br>
+            <li>To increase the accessibility of discovered data <br> to the general public </li>
+            <br>
+            <li>To facilitate communication between scientists, improving <br> the speed of both individual and general progress in research</li>
+        </ul>
+        <div class = "buttonposition">
+            <a href="login.html" class="back-button">back</a>
+        </div>
+    </body>
+</html>
