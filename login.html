@@ -2,9 +2,9 @@
 <html lang = "en">
 <head>
 <link href="main.html">
-<link rel="stylesheet" type="text/css" href="font.css">
+<link rel="stylesheet" type="text/css" href="font.css"> 
 <style>
-
+    
 
     body {
 
@@ -19,7 +19,7 @@
             background-color: #4434b4; 
             border: none; 
             color: #080c2c; 
-            padding: 15px 52px; /* small amount of padding */
+            padding: 15px 57px; /* small amount of padding */
             text-align: center; 
             text-decoration: none; 
             display: inline-block; 
@@ -32,7 +32,7 @@
     .start-button:hover {
             background-color: #242054; /* when hovering change color */
         }
-    .test {
+    .startbuttonposition { /* as the name implies */
         margin: 0;
         padding: 0;
         padding-top: 30%;
@@ -40,11 +40,18 @@
         justify-content: center;
         align-items: center;
     }
+    .aboutbuttonposition { /* as the name implies */
+        margin: 0;
+        padding: 0;
+        padding-top: 1%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
-
-    .container {
+    .container { /* logo position */
         position: absolute;
-        top: 35%;
+        top: 30%;
         left: 1%;
     }
 </style>
@@ -55,8 +62,11 @@
         <img src="logo.png" style = "padding: 0; width: 100%; length: 100%; ">
     </div>
 
-    <div class = "test">
+    <div class = "startbuttonposition">
         <a href="datatable=stars.html" class="start-button">Start</a>
+    </div>
+    <div class = "aboutbuttonposition">
+        <a href="about.html" class="start-button" style = "padding: 15px 52px; margin: 4px 2px;">About</a>
     </div>
 </body>
 
