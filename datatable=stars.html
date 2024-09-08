@@ -7,50 +7,104 @@
     border: 1px solid black;
     border-collapse: collapse;
     }
+
+    #input {
+    }
   </style>
   <title>Title</title>
 </head>
-<body>
-  <table id = "startable" style = "width:100%">
-    <tr>
-      <th>Name</th>
-      <th>Mass (M☉)</th>
-      <th>Radius (R☉)</th>
-      <th>Age</th>
-      <th>Temperature (K)</th>
-      <th>Luminosity (L☉)</th>
-    </tr>
-    <tbody id = "startablebody">
-      <tr>
-        <td>Sirius</td>
-        <td>2.063 +- 0.023</td>
-        <td>1.713 +- 0.009</td>
-        <td>242 +- 5 myr</td>
-        <td>25000 +- 200</td>
-        <td>0.056</td>
-      </tr>
-    </tbody>
-  </table>
 
-  <script>
-    function getOutput() {
-      var table = document.getElementById("startable");
-      var row = table.insertRow();
+<body onload="hideInput()">
 
-      var cell0 = row.insertCell(0);
-      var cell1 = row.insertCell(1);
-      var cell2 = row.insertCell(2);
-      var cell3 = row.insertCell(3);
-      var cell4 = row.insertCell(4);
-      var cell5 = row.insertCell(5);
-      cell0.innerHTML = localStorage.getItem('star0');
-      cell1.innerHTML = localStorage.getItem('star1');
-      cell2.innerHTML = localStorage.getItem('star2');
-      cell3.innerHTML = localStorage.getItem('star3');
-      cell4.innerHTML = localStorage.getItem('star4');
-      cell5.innerHTML = localStorage.getItem('star5');
-    }
-  </script>
-  <a href = "input=stars.html"> go to input page</a>
+<table id = "startable" style = "width:100%">
+  <tr>
+    <th>Name</th>
+    <th>Mass (M☉)</th>
+    <th>Radius (R☉)</th>
+    <th>Age</th>
+    <th>Temperature (K)</th>
+    <th>Luminosity (L☉)</th>
+  </tr>
+  <tbody id = "startablebody">
+  <tr>
+    <td>Sirius</td>
+    <td>2.063 +- 0.023</td>
+    <td>1.713 +- 0.009</td>
+    <td>242 +- 5 myr</td>
+    <td>25000 +- 200</td>
+    <td>0.056</td>
+  </tr>
+  </tbody>
+</table>
+
+<button onclick="showInput()" id="newDataButton">New Data</button>
+
+<div id="input" onload="hideInput()">
+  Name:
+  <br><input type="text" id="starname">
+  <br>Mass(M☉):
+  <br><input type="text" id="starmass">
+  <br>Radius(R☉):
+  <br><input type="text" id="starradius">
+  <br>Age:
+  <br><input type="text" id="starage">
+  <br>Temperature(K):
+  <br><input type="text" id="startemperature">
+  <br>Luminosity(L☉):
+  <br><input type="text" id="starluminosity">
+  <br><button onclick="getInput()" class="starsubmit-button">Submit</button>
+  <br>
+</div>
+
+
+<script>
+  function getInput() {
+    var star0 = document.getElementById("starname").value;
+    var star1 = document.getElementById("starmass").value;
+    var star2 = document.getElementById("starradius").value;
+    var star3 = document.getElementById("starage").value;
+    var star4 = document.getElementById("startemperature").value;
+    var star5 = document.getElementById("starluminosity").value;
+
+    var table = document.getElementById("startable");
+    var row = table.insertRow();
+
+    var cell0 = row.insertCell(0);
+    var cell1 = row.insertCell(1);
+    var cell2 = row.insertCell(2);
+    var cell3 = row.insertCell(3);
+    var cell4 = row.insertCell(4);
+    var cell5 = row.insertCell(5);
+    cell0.innerHTML = star0;
+    cell1.innerHTML = star1;
+    cell2.innerHTML = star2;
+    cell3.innerHTML = star3;
+    cell4.innerHTML = star4;
+    cell5.innerHTML = star5;
+
+    hideInput();
+  }
+
+  function hideInput() {
+    var x = document.getElementById("input");
+    x.style.display = "none";
+    var y = document.getElementById("newDataButton");
+    y.style.display = "block";
+  }
+
+  function showInput() {
+    var x = document.getElementById("input");
+    x.style.display = "block";
+    var y = document.getElementById("newDataButton");
+    y.style.display = "none";
+    document.getElementById("starname").value = "";
+    document.getElementById("starmass").value = "";
+    document.getElementById("starradius").value = "";
+    document.getElementById("starage").value = "";
+    document.getElementById("startemperature").value = "";
+    document.getElementById("starluminosity").value = "";
+  }
+</script>
+
 </body>
 </html>
