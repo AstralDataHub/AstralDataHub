@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" type="text/css" href="font.css">
+  <meta charset="UTF-8">
+  <style>
+    a {
+      color: yellow;
+    }
+    body {
+
+      background-image: url('background1.jpg');
+      background-size: cover;
+      background-position: center 1px;
+      background-repeat: repeat;
+      background-blend-mode: multiply;
+    }
+    table, th, td {
+    padding-right: 5px;
+    border: 4px solid white;
+    border-collapse: collapse;
+    color: yellow;
+    }
+
+    #input {
+    }
+
+    .newdatabutton {
+
+          background-color: #4434b4;
+          border: none;
+          color: #080c2c;
+          padding: 10px 25px; /* small amount of padding */
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 20px;
+          margin: 4px 2px; /* Margin */
+          cursor: pointer; /* Pointer cursor on hover */
+          border-radius: 0px; /* Rounded corners */
+          transition: background-color 0.3s ease; /* Smooth transition */
+      }
+      .newdatabutton:hover {
+          background-color: #242054; /* when hovering change color */
+      }
+      .newdatabuttonposition { /* as the name implies */
+          margin: 0;
+          padding-left: 0;
+          padding-top: 1%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+      }
+      .position {
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .backbuttonposition {
+        margin: 0;
+        padding-left: 0;
+        padding-top: 1%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+  </style>
+  <title>Asteroid data table</title>
+</head>
+
+<body onload="hideInput()">
+
+<table id = "asteroidtable" style = "width:100%">
+  <tr>
+    <th>Name</th>
+    <th>Mass (kg)</th>
+    <th>Mean Diameter (km)</th>
+    <th>Surface Area (km)</th>
+    <th>Volume (km<sup>3</sup>)</th>
+    <th>Density (g/cm<sup>3</sup>)</th>
+    <th>Analyze Data</th>
+  </tr>
+  <tbody id = "asteroidtablebody">
+  <tr>
+    <td>4 Vesta</td>
+    <td>2.59 &times 10<sup>20</sup></td>
+    <td>525.4</td>
+    <td>8.66 &times 10<sup>5</sup></td>
+    <td>7.49 &times 10<sup>7</sup></td>
+    <td>3.46</td>
+    <td><a href = "login.html">Analyze</a></td>
+  </tr>
+  </tbody>
+</table>
+
+<div class = "position">
+  <button onclick="showInput()" id="newDataButton" class ="newdatabutton">New Data</button>
+</div>
+<div class = "position">
+  <div id="input" onload="hideInput()">
+    Name:
+    <br><input type="text" id="asteroidname">
+    <br>Mass(M☉):
+    <br><input type="text" id="asteroidmass">
+    <br>Radius(R☉):
+    <br><input type="text" id="asteroiddiameter">
+    <br>Age:
+    <br><input type="text" id="asteroidarea">
+    <br>Temperature(K):
+    <br><input type="text" id="asteroidvolume">
+    <br>Luminosity(L☉):
+    <br><input type="text" id="asteroiddensity">
+    <br>
+    <div class = "position">
+      <button onclick="getInput()" class="newdatabutton">Submit</button>
+    </div>
+
+    <br>
+  </div>
+</div>
+
+
+<script>
+  function getInput() {
+    var asteroid0 = document.getElementById("asteroidname").value;
+    var asteroid1 = document.getElementById("asteroidmass").value;
+    var asteroid2 = document.getElementById("asteroiddiameter").value;
+    var asteroid3 = document.getElementById("asteroidarea").value;
+    var asteroid4 = document.getElementById("asteroidvolume").value;
+    var asteroid5 = document.getElementById("asteroiddensity").value;
+
+    var table = document.getElementById("asteroidtable");
+    var row = table.insertRow();
+
+    var cell0 = row.insertCell(0);
+    var cell1 = row.insertCell(1);
+    var cell2 = row.insertCell(2);
+    var cell3 = row.insertCell(3);
+    var cell4 = row.insertCell(4);
+    var cell5 = row.insertCell(5);
+    var cell6 = row.insertCell(6);
+    cell6.innerHTML = '<a href="login.html">Analyze</a>';
+    cell0.innerHTML = asteroid0;
+    cell1.innerHTML = asteroid1;
+    cell2.innerHTML = asteroid2;
+    cell3.innerHTML = asteroid3;
+    cell4.innerHTML = asteroid4;
+    cell5.innerHTML = asteroid5;
+
+    hideInput();
+  }
+
+  function hideInput() {
+    var x = document.getElementById("input");
+    x.style.display = "none";
+    var y = document.getElementById("newDataButton");
+    y.style.display = "block";
+  }
+
+  function showInput() {
+    var x = document.getElementById("input");
+    x.style.display = "block";
+    var y = document.getElementById("newDataButton");
+    y.style.display = "none";
+    document.getElementById("asteroidname").value = "";
+    document.getElementById("asteroidmass").value = "";
+    document.getElementById("asteroiddiameter").value = "";
+    document.getElementById("ateroidarea").value = "";
+    document.getElementById("asteroidvolume").value = "";
+    document.getElementById("asteroiddensity").value = "";
+  }
+</script>
+<div class = "backbuttonposition">
+  <a href="login.html" class ="newdatabutton">Back</a>
+</div>
+</body>
+</html>
