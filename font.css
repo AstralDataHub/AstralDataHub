@@ -1,0 +1,8 @@
+@font-family {
+    font-family: "Minecraft";
+    src: url(Minecraft.tff);
+}
+
+body {
+    font-family: "Minecraft";
+}
